@@ -179,7 +179,7 @@ class _MapSection extends StatelessWidget {
             borderRadius: BorderRadius.vertical(top: Radius.circular(11)),
           ),
           child: const Text(
-            '위치',
+            '위치 지도',
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
           ),
