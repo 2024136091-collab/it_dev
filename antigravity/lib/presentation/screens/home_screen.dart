@@ -178,7 +178,7 @@ class _AiSearchButton extends StatelessWidget {
             const SizedBox(width: 12),
             const Expanded(
               child: Text(
-                '"오래된 승강기 찾아줘" 처럼 자연어로 검색',
+                '"오래된 승강기 찾아줘" 처럼 문장으로 검색',
                 style:
                     TextStyle(color: Color(0xFFb39ddb), fontSize: 13),
               ),

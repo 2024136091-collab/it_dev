@@ -252,7 +252,7 @@ class _AiInputField extends StatelessWidget {
       controller: controller,
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        hintText: '"오래된 승강기 찾아줘" 처럼 질문해 보세요',
+        hintText: '"오래된 승강기 찾아줘" 처럼 문장으로 검색하세요',
         hintStyle: const TextStyle(color: Color(0xFF9198a1), fontSize: 13),
         prefixIcon: const Icon(Icons.psychology, color: Color(0xFF7c3aed)),
         suffixIcon: IconButton(
