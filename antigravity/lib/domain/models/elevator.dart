@@ -1,7 +1,7 @@
 class Elevator {
   final String id;
   final String buildingName;
-  final String buildingCategory; // 학교·아파트·오피스·상업시설 등
+  final String buildingCategory; // 학교·아파트·오피스·상업시설·병원
   final String address;
   final String type;
   final int installYear;
