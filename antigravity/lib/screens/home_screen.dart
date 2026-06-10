@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/elevator.dart';
 import 'search_result_screen.dart';
 import 'detail_screen.dart';
+import 'favorites_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,6 +51,16 @@ class _HomeScreenState extends State<HomeScreen> {
           '승강기 정보검색',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.star, color: Color(0xFFe94560)),
+            tooltip: '즐겨찾기',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const FavoritesScreen()),
+            ),
+          ),
+        ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(height: 1, color: const Color(0xFFe94560)),

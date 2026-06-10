@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'presentation/screens/home_screen.dart';
 
 void main() {
-  runApp(const ElevatorApp());
+  runApp(const ProviderScope(child: ElevatorApp()));
 }
 
 class ElevatorApp extends StatelessWidget {

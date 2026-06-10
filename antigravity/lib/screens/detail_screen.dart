@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/elevator.dart';
+import '../services/favorites_service.dart';
 
 class DetailScreen extends StatelessWidget {
   final Elevator elevator;
@@ -14,6 +15,23 @@ class DetailScreen extends StatelessWidget {
         backgroundColor: const Color(0xFF0f3460),
         foregroundColor: Colors.white,
         title: Text(elevator.buildingName),
+        actions: [
+          ListenableBuilder(
+            listenable: FavoritesService.instance,
+            builder: (context, _) {
+              final isFav = FavoritesService.instance.isFavorite(elevator.id);
+              return IconButton(
+                icon: Icon(
+                  isFav ? Icons.star : Icons.star_border,
+                  color: const Color(0xFFe94560),
+                ),
+                tooltip: isFav ? '즐겨찾기 해제' : '즐겨찾기 추가',
+                onPressed: () =>
+                    FavoritesService.instance.toggle(elevator.id),
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
