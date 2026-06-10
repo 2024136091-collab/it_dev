@@ -90,7 +90,7 @@ class _AiSearchScreenState extends ConsumerState<AiSearchScreen>
               ),
             ),
             const SizedBox(width: 8),
-            const Text('AI 자연어 검색'),
+            const Text('스마트 자연어 검색'),
           ],
         ),
         bottom: PreferredSize(
@@ -154,7 +154,7 @@ class _AiSearchScreenState extends ConsumerState<AiSearchScreen>
             _ThinkingDots(controller: _dotController),
             const SizedBox(height: 16),
             const Text(
-              'AI가 분석 중입니다...',
+              '키워드를 분석 중입니다...',
               style: TextStyle(color: Color(0xFF9198a1), fontSize: 14),
             ),
           ],
@@ -171,7 +171,7 @@ class _AiSearchScreenState extends ConsumerState<AiSearchScreen>
                 color: Color(0xFF7c3aed), size: 56),
             SizedBox(height: 16),
             Text(
-              '자연어로 승강기를 검색하세요.\n예: "오래된 승강기 찾아줘"',
+              '문장으로 승강기를 검색하세요.\n예: "오래된 승강기 찾아줘"',
               textAlign: TextAlign.center,
               style: TextStyle(color: Color(0xFF9198a1), fontSize: 14),
             ),
