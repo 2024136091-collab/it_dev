@@ -59,4 +59,4 @@ flutter build web --release
 
 ## 발표 자료
 
-[https://num.slogs.dev](https://num.slogs.dev)
+[https://2024136091-collab.github.io/Elevator-info](https://2024136091-collab.github.io/Elevator-info)
