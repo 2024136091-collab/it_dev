@@ -9,6 +9,8 @@ class Elevator {
   final int capacity;
   final String lastInspectedAt;
   final bool isOperating;
+  final double? lat;
+  final double? lng;
 
   const Elevator({
     required this.id,
@@ -21,6 +23,8 @@ class Elevator {
     required this.capacity,
     required this.lastInspectedAt,
     required this.isOperating,
+    this.lat,
+    this.lng,
   });
 
   // 국가승강기정보센터 번호 형식: XXXX-XXX

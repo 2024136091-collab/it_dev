@@ -15,6 +15,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 15,
     lastInspectedAt: '2025-11-20',
     isOperating: true,
+    lat: 37.4387, lng: 127.1494,
   ),
   Elevator(
     id: '2091-143',
@@ -27,6 +28,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 9,
     lastInspectedAt: '2025-11-20',
     isOperating: true,
+    lat: 37.4387, lng: 127.1494,
   ),
   Elevator(
     id: '3819-208',
@@ -39,6 +41,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 0,
     lastInspectedAt: '2025-10-05',
     isOperating: true,
+    lat: 37.4389, lng: 127.1498,
   ),
   // 오피스
   Elevator(
@@ -52,6 +55,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 20,
     lastInspectedAt: '2025-09-18',
     isOperating: false,
+    lat: 37.4984, lng: 127.0280,
   ),
   Elevator(
     id: '0153-925',
@@ -64,6 +68,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 0,
     lastInspectedAt: '2025-09-18',
     isOperating: true,
+    lat: 37.4984, lng: 127.0280,
   ),
   Elevator(
     id: '0153-926',
@@ -76,6 +81,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 9,
     lastInspectedAt: '2025-09-18',
     isOperating: true,
+    lat: 37.4984, lng: 127.0280,
   ),
   // 상업시설
   Elevator(
@@ -89,6 +95,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 26,
     lastInspectedAt: '2025-12-01',
     isOperating: true,
+    lat: 37.5126, lng: 127.1026,
   ),
   Elevator(
     id: '1940-832',
@@ -101,6 +108,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 20,
     lastInspectedAt: '2025-12-01',
     isOperating: true,
+    lat: 37.5126, lng: 127.1026,
   ),
   Elevator(
     id: '1940-833',
@@ -113,6 +121,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 9,
     lastInspectedAt: '2025-12-01',
     isOperating: true,
+    lat: 37.5126, lng: 127.1026,
   ),
   // 오피스
   Elevator(
@@ -126,6 +135,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 17,
     lastInspectedAt: '2025-08-30',
     isOperating: true,
+    lat: 37.3947, lng: 127.1109,
   ),
   // 아파트
   Elevator(
@@ -139,6 +149,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 13,
     lastInspectedAt: '2025-06-10',
     isOperating: true,
+    lat: 37.4452, lng: 127.1448,
   ),
   Elevator(
     id: '3815-441',
@@ -151,6 +162,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 13,
     lastInspectedAt: '2025-07-14',
     isOperating: true,
+    lat: 37.3756, lng: 127.1126,
   ),
   Elevator(
     id: '3815-442',
@@ -163,6 +175,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 0,
     lastInspectedAt: '2025-07-14',
     isOperating: false,
+    lat: 37.3756, lng: 127.1126,
   ),
   // 병원
   Elevator(
@@ -176,6 +189,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 17,
     lastInspectedAt: '2025-10-30',
     isOperating: true,
+    lat: 37.5270, lng: 127.1086,
   ),
   Elevator(
     id: '0841-772',
@@ -188,6 +202,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 9,
     lastInspectedAt: '2025-10-30',
     isOperating: true,
+    lat: 37.5270, lng: 127.1086,
   ),
   Elevator(
     id: '0841-773',
@@ -200,6 +215,7 @@ const List<Elevator> _dummyElevators = [
     capacity: 0,
     lastInspectedAt: '2025-10-30',
     isOperating: true,
+    lat: 37.5270, lng: 127.1086,
   ),
 ];
 

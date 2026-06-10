@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
 import '../../application/providers/favorites_providers.dart';
 import '../../domain/models/elevator.dart';
 
@@ -59,6 +61,11 @@ class DetailScreen extends ConsumerWidget {
               ('검사 결과', '합격'),
               ('담당 검사원', '홍길동'),
             ]),
+            if (elevator.lat != null && elevator.lng != null) ...[
+              const SizedBox(height: 16),
+              _MapSection(lat: elevator.lat!, lng: elevator.lng!,
+                  label: elevator.buildingName),
+            ],
           ],
         ),
       ),
@@ -148,6 +155,77 @@ class _InfoCard extends StatelessWidget {
               )),
         ],
       ),
+    );
+  }
+}
+
+class _MapSection extends StatelessWidget {
+  final double lat;
+  final double lng;
+  final String label;
+  const _MapSection({required this.lat, required this.lng, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final point = LatLng(lat, lng);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          decoration: const BoxDecoration(
+            color: Color(0xFFe94560),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(11)),
+          ),
+          child: const Text(
+            '위치',
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
+          ),
+        ),
+        ClipRRect(
+          borderRadius:
+              const BorderRadius.vertical(bottom: Radius.circular(11)),
+          child: SizedBox(
+            height: 220,
+            child: FlutterMap(
+              options: MapOptions(
+                initialCenter: point,
+                initialZoom: 16,
+              ),
+              children: [
+                TileLayer(
+                  urlTemplate:
+                      'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  userAgentPackageName: 'com.example.antigravity',
+                ),
+                MarkerLayer(
+                  markers: [
+                    Marker(
+                      point: point,
+                      width: 48,
+                      height: 48,
+                      child: const Icon(
+                        Icons.location_pin,
+                        color: Color(0xFFe94560),
+                        size: 40,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 6, 12, 0),
+          child: Text(
+            '$label · ${lat.toStringAsFixed(4)}° N, ${lng.toStringAsFixed(4)}° E',
+            style: const TextStyle(color: Color(0xFF9198a1), fontSize: 11),
+          ),
+        ),
+      ],
     );
   }
 }
