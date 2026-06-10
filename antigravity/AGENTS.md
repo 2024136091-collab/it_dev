@@ -17,7 +17,8 @@ AI Agent(Claude Code)를 활용한 Flutter 앱 개발 정책 문서입니다.
 Presentation → Application → Domain → Data
 ```
 
-- `presentation/` 레이어는 `domain/`을 직접 import하지 않습니다.
+- `presentation/` 레이어는 `domain/models/`(데이터 클래스)는 import 가능하나, `domain/services/`를 직접 호출하지 않습니다.
+- `presentation/` 레이어의 비즈니스 로직 호출은 반드시 `application/providers/`를 통해서만 합니다.
 - `data/` 레이어는 `presentation/`을 import하지 않습니다.
 - 비즈니스 로직은 반드시 `domain/services/`에 작성합니다.
 
