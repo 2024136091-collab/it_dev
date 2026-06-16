@@ -57,6 +57,16 @@ flutter pub get
 flutter build web --release
 ```
 
+## 문서
+
+| 문서 | 내용 |
+|---|---|
+| [docs/setup.md](docs/setup.md) | 개발환경 설정 |
+| [docs/deploy.md](docs/deploy.md) | 빌드·배포 단계 |
+| [docs/testing.md](docs/testing.md) | 단위·통합 테스트 |
+| [docs/performance.md](docs/performance.md) | 성능 최적화 |
+| [docs/adr/](docs/adr/) | 설계 결정(ADR) 3건 |
+
 ## 발표 자료
 
 [https://2024136091-collab.github.io](https://2024136091-collab.github.io)
