@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../application/providers/favorites_providers.dart';
 import '../../domain/models/elevator.dart';
 
@@ -46,6 +47,8 @@ class DetailScreen extends ConsumerWidget {
               ('주소', elevator.address),
               ('종류', elevator.type),
             ]),
+            const SizedBox(height: 16),
+            _ExternalLinkCard(elevatorId: elevator.id),
             const SizedBox(height: 16),
             _InfoCard(title: '제원', rows: [
               ('제조사', elevator.manufacturer),
@@ -99,6 +102,47 @@ class _StatusBadge extends StatelessWidget {
               ? const Color(0xFF3fb950)
               : const Color(0xFFf85149),
           fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
+
+class _ExternalLinkCard extends StatelessWidget {
+  final String elevatorId;
+  const _ExternalLinkCard({required this.elevatorId});
+
+  // 실제 API 연동 전까지는 공식 사이트로 바로 이동하는 링크만 제공한다.
+  Future<void> _open() => launchUrl(
+        Uri.parse('https://www.elevator.go.kr'),
+        mode: LaunchMode.externalApplication,
+      );
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: _open,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        decoration: BoxDecoration(
+          color: const Color(0xFF0f3460).withValues(alpha: 0.4),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: const Color(0xFF0f3460)),
+        ),
+        child: Row(
+          children: [
+            const Icon(Icons.open_in_new, color: Color(0xFFe94560), size: 18),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                '국가승강기정보센터에서 "$elevatorId" 원본 정보 확인',
+                style: const TextStyle(color: Colors.white, fontSize: 13),
+              ),
+            ),
+            const Icon(Icons.chevron_right, color: Color(0xFF9198a1)),
+          ],
         ),
       ),
     );
