@@ -39,7 +39,7 @@ class FavoritesScreen extends ConsumerWidget {
           : ListView.separated(
               padding: const EdgeInsets.all(16),
               itemCount: favorites.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 10),
+              separatorBuilder: (_, _) => const SizedBox(height: 10),
               itemBuilder: (context, i) =>
                   _FavoriteCard(elevator: favorites[i]),
             ),
@@ -62,7 +62,7 @@ class _FavoriteCard extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF0f3460).withOpacity(0.4),
+          color: const Color(0xFF0f3460).withValues(alpha: 0.4),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: const Color(0xFF0f3460)),
         ),

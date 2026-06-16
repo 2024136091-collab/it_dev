@@ -83,8 +83,8 @@ class _StatusBadge extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
       decoration: BoxDecoration(
         color: isOperating
-            ? const Color(0xFF1a7f37).withOpacity(0.2)
-            : const Color(0xFFcf222e).withOpacity(0.2),
+            ? const Color(0xFF1a7f37).withValues(alpha: 0.2)
+            : const Color(0xFFcf222e).withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: isOperating
@@ -114,7 +114,7 @@ class _InfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF0f3460).withOpacity(0.4),
+        color: const Color(0xFF0f3460).withValues(alpha: 0.4),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: const Color(0xFF0f3460)),
       ),

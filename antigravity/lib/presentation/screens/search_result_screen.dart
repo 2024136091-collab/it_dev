@@ -97,7 +97,7 @@ class _SearchResultScreenState extends ConsumerState<SearchResultScreen> {
                       child: ListView.separated(
                         padding: const EdgeInsets.all(16),
                         itemCount: buildings.length,
-                        separatorBuilder: (_, __) =>
+                        separatorBuilder: (_, _) =>
                             const SizedBox(height: 16),
                         itemBuilder: (context, i) => _BuildingGroup(
                           buildingName: buildings[i],
@@ -135,7 +135,7 @@ class _RegionFilter extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         itemCount: regions.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 8),
+        separatorBuilder: (_, _) => const SizedBox(width: 8),
         itemBuilder: (context, i) {
           final r = regions[i];
           final isSelected = r == selected;
@@ -147,7 +147,7 @@ class _RegionFilter extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isSelected
                     ? const Color(0xFFe94560)
-                    : const Color(0xFF0f3460).withOpacity(0.5),
+                    : const Color(0xFF0f3460).withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   color: isSelected
@@ -190,7 +190,7 @@ class _ElevatorCard extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF0f3460).withOpacity(0.4),
+          color: const Color(0xFF0f3460).withValues(alpha: 0.4),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: const Color(0xFF0f3460)),
         ),
@@ -294,9 +294,9 @@ class _Tag extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.15),
+        color: color.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: color.withOpacity(0.4)),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
       ),
       child: Text(text, style: TextStyle(color: color, fontSize: 11)),
     );

@@ -188,13 +188,13 @@ class _AiSearchScreenState extends ConsumerState<AiSearchScreen>
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                const Color(0xFF7c3aed).withOpacity(0.15),
-                const Color(0xFFe94560).withOpacity(0.1),
+                const Color(0xFF7c3aed).withValues(alpha: 0.15),
+                const Color(0xFFe94560).withValues(alpha: 0.1),
               ],
             ),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-                color: const Color(0xFF7c3aed).withOpacity(0.4)),
+                color: const Color(0xFF7c3aed).withValues(alpha: 0.4)),
           ),
           child: Row(
             children: [
@@ -231,7 +231,7 @@ class _AiSearchScreenState extends ConsumerState<AiSearchScreen>
               : ListView.separated(
                   padding: const EdgeInsets.all(16),
                   itemCount: _results.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 10),
+                  separatorBuilder: (_, _) => const SizedBox(height: 10),
                   itemBuilder: (context, i) =>
                       _AiResultCard(elevator: _results[i]),
                 ),
@@ -260,7 +260,7 @@ class _AiInputField extends StatelessWidget {
           onPressed: () => onSearch(controller.text),
         ),
         filled: true,
-        fillColor: const Color(0xFF0f3460).withOpacity(0.5),
+        fillColor: const Color(0xFF0f3460).withValues(alpha: 0.5),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: Color(0xFF7c3aed)),
@@ -268,7 +268,7 @@ class _AiInputField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide:
-              BorderSide(color: const Color(0xFF7c3aed).withOpacity(0.5)),
+              BorderSide(color: const Color(0xFF7c3aed).withValues(alpha: 0.5)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
@@ -292,10 +292,10 @@ class _ExampleChip extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         decoration: BoxDecoration(
-          color: const Color(0xFF7c3aed).withOpacity(0.12),
+          color: const Color(0xFF7c3aed).withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-              color: const Color(0xFF7c3aed).withOpacity(0.4)),
+              color: const Color(0xFF7c3aed).withValues(alpha: 0.4)),
         ),
         child: Text(
           text,
@@ -364,10 +364,10 @@ class _AiResultCard extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: const Color(0xFF0f3460).withOpacity(0.4),
+          color: const Color(0xFF0f3460).withValues(alpha: 0.4),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-              color: const Color(0xFF7c3aed).withOpacity(0.3)),
+              color: const Color(0xFF7c3aed).withValues(alpha: 0.3)),
         ),
         child: Row(
           children: [
@@ -375,7 +375,7 @@ class _AiResultCard extends ConsumerWidget {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: const Color(0xFF7c3aed).withOpacity(0.15),
+                color: const Color(0xFF7c3aed).withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Icon(Icons.elevator,
@@ -437,9 +437,9 @@ class _SmallTag extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.15),
+        color: color.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: color.withOpacity(0.4)),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
       ),
       child: Text(text, style: TextStyle(color: color, fontSize: 10)),
     );

@@ -117,7 +117,7 @@ class _SearchBar extends StatelessWidget {
           onPressed: () => onSearch(controller.text),
         ),
         filled: true,
-        fillColor: const Color(0xFF0f3460).withOpacity(0.5),
+        fillColor: const Color(0xFF0f3460).withValues(alpha: 0.5),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: Color(0xFF0f3460)),
@@ -149,13 +149,13 @@ class _AiSearchButton extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              const Color(0xFF7c3aed).withOpacity(0.15),
-              const Color(0xFFe94560).withOpacity(0.1),
+              const Color(0xFF7c3aed).withValues(alpha: 0.15),
+              const Color(0xFFe94560).withValues(alpha: 0.1),
             ],
           ),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-              color: const Color(0xFF7c3aed).withOpacity(0.5)),
+              color: const Color(0xFF7c3aed).withValues(alpha: 0.5)),
         ),
         child: Row(
           children: [
